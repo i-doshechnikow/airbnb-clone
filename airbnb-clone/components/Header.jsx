@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { SearchIcon } from '@heroicons/react/solid'
 
 export default function Header() {
   return (
@@ -14,7 +15,10 @@ export default function Header() {
       </div>
 
       {/*  middle - search */}
-      <div></div>
+      <div>
+        <input type="text" placeholder="Start your search" />
+        <SearchIcon />
+      </div>
 
       {/* right */}
       <div></div>

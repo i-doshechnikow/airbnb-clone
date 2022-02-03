@@ -1,5 +1,11 @@
 import Image from 'next/image'
-import { SearchIcon } from '@heroicons/react/solid'
+import {
+  SearchIcon,
+  GlobeAltIcon,
+  MenuIcon,
+  UserCircleIcon,
+  UsersIcon,
+} from '@heroicons/react/solid'
 
 export default function Header() {
   return (
@@ -25,7 +31,14 @@ export default function Header() {
       </div>
 
       {/* right */}
-      <div></div>
+      <div className="flex items-center justify-end space-x-4 text-gray-500">
+        <p>Become a host</p>
+        <GlobeAltIcon className="h-6 cursor-pointer" />
+        <div className='flex items-center border-2 rounded-full md:shadow-sm space-x-2 p-2 cursor-pointer'>
+          <MenuIcon className='h-6'/>
+          <UserCircleIcon className='h-6'/>
+        </div>
+      </div>
     </header>
   )
 }

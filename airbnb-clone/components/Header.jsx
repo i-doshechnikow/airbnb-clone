@@ -32,11 +32,11 @@ export default function Header() {
 
       {/* right */}
       <div className="flex items-center justify-end space-x-4 text-gray-500">
-        <p>Become a host</p>
+        <p className="hidden cursor-pointer md:inline">Become a host</p>
         <GlobeAltIcon className="h-6 cursor-pointer" />
-        <div className='flex items-center border-2 rounded-full md:shadow-sm space-x-2 p-2 cursor-pointer'>
-          <MenuIcon className='h-6'/>
-          <UserCircleIcon className='h-6'/>
+        <div className="flex cursor-pointer items-center space-x-2 rounded-full border-2 p-2 md:shadow-sm">
+          <MenuIcon className="h-6" />
+          <UserCircleIcon className="h-6" />
         </div>
       </div>
     </header>

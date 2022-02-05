@@ -2,7 +2,9 @@ import Head from 'next/head'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
 
-export default function Home() {
+export default function Home(props) {
+  const { exploreData } = props
+
   return (
     <div className="">
       <Head>
@@ -14,12 +16,26 @@ export default function Home() {
 
       {/* Banner */}
       <Banner />
-      <main className='max-w-7xl mx-auto px-8 sm:px-16'>
-        <section className='pt-6'>
+      <main className="mx-auto max-w-7xl px-8 sm:px-16">
+        <section className="pt-6">
           <h2 className="pb-5 text-4xl font-semibold ">Explore nearby</h2>
+          {exploreData?.map((item) => (
+            <h1>{item.location}</h1>
+          ))}
           {/* pull data from server */}
         </section>
       </main>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const request = await fetch('https://links.papareact.com/pyp')
+  const exploreData = await request.json()
+
+  return {
+    props: {
+      exploreData,
+    },
+  }
 }

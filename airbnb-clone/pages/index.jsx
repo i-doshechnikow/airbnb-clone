@@ -33,7 +33,7 @@ export default function Home(props) {
 
         <section className="pt-6">
           <h2 className="pb-5 text-4xl font-semibold">Live anywhere</h2>
-          <div className="flex space-x-3 overflow-scroll">
+          <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
             {cardsData?.map(({ title, img }, id) => (
               <MediumCard key={id} title={title} img={img} />
             ))}

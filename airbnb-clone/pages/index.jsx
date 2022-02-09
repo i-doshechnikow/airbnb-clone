@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Banner from '../components/Banner'
 import Header from '../components/Header'
+import LargeCard from '../components/LargeCard'
 import MediumCard from '../components/MediumCard'
 import SmallCard from '../components/SmallCard'
 
@@ -33,12 +34,19 @@ export default function Home(props) {
 
         <section className="pt-6">
           <h2 className="pb-5 text-4xl font-semibold">Live anywhere</h2>
-          <div className="flex space-x-3 overflow-scroll scrollbar-hide p-3 -ml-3">
+          <div className="-ml-3 flex space-x-3 overflow-scroll p-3 scrollbar-hide">
             {cardsData?.map(({ title, img }, id) => (
               <MediumCard key={id} title={title} img={img} />
             ))}
           </div>
         </section>
+
+        <LargeCard
+          img="https://links.papareact.com/4cj"
+          title="The greatest outdoors"
+          description="Wishlist curated by Airbnb"
+          buttonText="Get Inspired"
+        />
       </main>
     </div>
   )

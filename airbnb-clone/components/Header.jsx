@@ -15,7 +15,7 @@ import { DateRangePicker } from 'react-date-range'
 
 export default function Header() {
   const [searchInput, setSearchInput] = useState('')
-  const [startDate, setStartDate] = useState(new Date(2022, 1, 11))
+  const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
 
   let selectionRange = {
@@ -24,7 +24,10 @@ export default function Header() {
     key: 'Selection',
   }
 
-  console.log(searchInput)
+  const handleSelect = (event) => {
+    setStartDate(event.Selection.startDate)
+    setEndDate(event.Selection.endDate)
+  }
   return (
     <header className="sticky top-0 z-50 grid grid-cols-3 bg-white p-5 shadow-md md:px-10">
       {/* left - logo */}
@@ -61,7 +64,12 @@ export default function Header() {
 
       {searchInput && (
         <div>
-          <DateRangePicker ranges={[selectionRange]} />
+          <DateRangePicker
+            ranges={[selectionRange]}
+            minDate={new Date()}
+            rangeColors={['#FD5B61']}
+            onChange={handleSelect}
+          />
         </div>
       )}
     </header>

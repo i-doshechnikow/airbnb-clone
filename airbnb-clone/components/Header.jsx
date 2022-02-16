@@ -27,6 +27,7 @@ export default function Header() {
   const resetInput = () => {
     setSearchInput('')
   }
+  
   let selectionRange = {
     startDate: startDate,
     endDate: endDate,

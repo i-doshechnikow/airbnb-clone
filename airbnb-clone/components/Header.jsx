@@ -12,12 +12,14 @@ import 'react-date-range/dist/styles.css'
 import 'react-date-range/dist/theme/default.css'
 
 import { DateRangePicker } from 'react-date-range'
+import { useRouter } from 'next/dist/client/router'
 
 export default function Header() {
   const [searchInput, setSearchInput] = useState('')
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndDate] = useState(new Date())
   const [nmbOfGuests, setNmbOfGuests] = useState(2)
+  const router = useRouter()
 
   const handleSelect = (event) => {
     setStartDate(event.selection.startDate)
@@ -27,7 +29,7 @@ export default function Header() {
   const resetInput = () => {
     setSearchInput('')
   }
-  
+
   let selectionRange = {
     startDate: startDate,
     endDate: endDate,
@@ -37,7 +39,10 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 grid grid-cols-3 bg-white p-5 shadow-md md:px-10">
       {/* left - logo */}
-      <div className="relative my-auto flex h-10 cursor-pointer items-center">
+      <div
+        onClick={() => router.push('/')}
+        className="relative my-auto flex h-10 cursor-pointer items-center"
+      >
         <Image
           src="https://links.papareact.com/qd3"
           layout="fill"

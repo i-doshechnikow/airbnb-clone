@@ -7,12 +7,14 @@ function Search() {
       <Header />
 
       <main className="flex">
-        <section className="mx-3 w-full">
+        <section>
           <p className="text-xs">300+ Stays for 5 number of guests</p>
           <h1 className="mt-2 mb-6 text-3xl font-semibold">Stays Mars</h1>
 
-          <div className='hidden lg:inline-flex'>
-            <p className='px-4 py-2'>Cancellation Flexibility</p>
+          <div className="">
+            <p className="transform cursor-pointer rounded-full border px-4 py-2 transition duration-100 ease-out hover:shadow-lg active:scale-95 active:bg-gray-100">
+              Cancellation Flexibility
+            </p>
           </div>
         </section>
       </main>

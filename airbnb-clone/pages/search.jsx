@@ -14,7 +14,7 @@ function Search() {
 
   return (
     <div className="h-screen">
-      <Header />
+      <Header placeHolder={`${location} | ${range} | ${noOfGuests} guests`}/>
 
       <main className="flex">
         <section className="flex-grow px-6 pt-14">

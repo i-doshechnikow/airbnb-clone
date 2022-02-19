@@ -2,6 +2,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { useRouter } from 'next/dist/client/router'
 import { format } from 'date-fns'
+import InfoCard from '../components/InfoCard'
 
 function Search(props) {
   const { searchResult } = props
@@ -35,7 +36,18 @@ function Search(props) {
             <p className="button">More filters</p>
           </div>
 
-          {searchResult.map((item) => (<p>{item.location}</p>))}
+          {searchResult.map(
+            ({ img, location, description, star, price, total }) => (
+              <InfoCard
+                img={img}
+                location={location}
+                description={description}
+                star={star}
+                price={price}
+                total={total}
+              />
+            )
+          )}
         </section>
       </main>
 

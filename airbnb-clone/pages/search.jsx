@@ -3,7 +3,8 @@ import Footer from '../components/Footer'
 import { useRouter } from 'next/dist/client/router'
 import { format } from 'date-fns'
 
-function Search() {
+function Search(props) {
+  const { searchResult } = props
   const router = useRouter()
 
   const { location, startDate, endDate, noOfGuests } = router.query
@@ -14,7 +15,7 @@ function Search() {
 
   return (
     <div className="h-screen">
-      <Header placeHolder={`${location} | ${range} | ${noOfGuests} guests`}/>
+      <Header placeHolder={`${location} | ${range} | ${noOfGuests} guests`} />
 
       <main className="flex">
         <section className="flex-grow px-6 pt-14">
@@ -41,3 +42,14 @@ function Search() {
 }
 
 export default Search
+
+export async function getServerSideProps() {
+  const searchRequest = await fetch('https://links.papareact.com/zp1')
+  const searchResult = await searchRequest.json()
+
+  return {
+    props: {
+      searchResult,
+    },
+  }
+}

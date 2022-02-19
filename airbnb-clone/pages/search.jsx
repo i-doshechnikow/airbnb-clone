@@ -5,6 +5,7 @@ import { format } from 'date-fns'
 
 function Search(props) {
   const { searchResult } = props
+  console.log('searchResult', searchResult)
   const router = useRouter()
 
   const { location, startDate, endDate, noOfGuests } = router.query
@@ -33,6 +34,8 @@ function Search(props) {
             <p className="button">Rooms and Beds</p>
             <p className="button">More filters</p>
           </div>
+
+          {searchResult.map((item) => (<p>{item.location}</p>))}
         </section>
       </main>
 
@@ -44,7 +47,7 @@ function Search(props) {
 export default Search
 
 export async function getServerSideProps() {
-  const searchRequest = await fetch('https://links.papareact.com/zp1')
+  const searchRequest = await fetch('https://links.papareact.com/isz')
   const searchResult = await searchRequest.json()
 
   return {

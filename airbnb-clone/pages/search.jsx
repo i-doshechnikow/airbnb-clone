@@ -36,18 +36,25 @@ function Search(props) {
             <p className="button">More filters</p>
           </div>
 
-          {searchResult.map(
-            ({ img, location, description, star, price, total }) => (
-              <InfoCard
-                img={img}
-                location={location}
-                description={description}
-                star={star}
-                price={price}
-                total={total}
-              />
-            )
-          )}
+          <div className="flex flex-col">
+            {searchResult.map(
+              (
+                { img, location, description, star, price, total, title },
+                id
+              ) => (
+                <InfoCard
+                  key={id}
+                  img={img}
+                  location={location}
+                  description={description}
+                  star={star}
+                  price={price}
+                  total={total}
+                  title={title}
+                />
+              )
+            )}
+          </div>
         </section>
       </main>
 

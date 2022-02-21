@@ -3,10 +3,10 @@ import Footer from '../components/Footer'
 import { useRouter } from 'next/dist/client/router'
 import { format } from 'date-fns'
 import InfoCard from '../components/InfoCard'
+import Map from '../components/Map'
 
 function Search(props) {
   const { searchResult } = props
-  console.log('searchResult', searchResult)
   const router = useRouter()
 
   const { location, startDate, endDate, noOfGuests } = router.query
@@ -55,6 +55,11 @@ function Search(props) {
               )
             )}
           </div>
+        </section>
+
+        {/* <section className='hidden xl:inline-flex'> */}
+        <section className=''>
+          <Map />
         </section>
       </main>
 

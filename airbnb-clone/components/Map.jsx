@@ -1,7 +1,12 @@
-import Map from 'react-map-gl'
+import { Map as MapGL } from 'react-map-gl'
 
 function Map() {
-  return <div>Hi</div>
+  return (
+    <MapGL
+      mapStyle="mapbox://styles/director37/ckzwwp02f000814rvmy7wx5eh"
+      mapboxAccessToken={process.env.mapbox_key}
+    />
+  )
 }
 
 export default Map

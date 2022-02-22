@@ -1,6 +1,14 @@
 import { Map as MapGL } from 'react-map-gl'
+import getCenter from 'geolib/es/getCenter'
 
-function Map() {
+function Map({ searchResult }) {
+  const coordinates = searchResult.map((el) => ({
+    longitude: el.long,
+    latitude: el.lat,
+  }))
+
+  console.log(coordinates)
+
   return (
     <MapGL
       mapStyle="mapbox://styles/director37/ckzwwp02f000814rvmy7wx5eh"

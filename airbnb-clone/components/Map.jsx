@@ -1,4 +1,4 @@
-import { Map as MapGL } from 'react-map-gl'
+import { Map as MapGL, Marker, Popup } from 'react-map-gl'
 import getCenter from 'geolib/es/getCenter'
 
 function Map({ searchResult }) {
@@ -19,7 +19,20 @@ function Map({ searchResult }) {
         zoom: 8,
       }}
       style={{ width: '100%', height: '100%' }}
-    />
+    >
+      {searchResult.map((el, id) => (
+        <div key={id}>
+          <Marker
+            longitude={el.long}
+            latitude={el.lat}
+            offsetLeft={-20}
+            offsetTop={-10}
+          >
+            {/* <p>!!!!!!!!!</p> */}
+          </Marker>
+        </div>
+      ))}
+    </MapGL>
   )
 }
 

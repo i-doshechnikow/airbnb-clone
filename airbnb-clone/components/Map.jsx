@@ -20,18 +20,18 @@ function Map({ searchResult }) {
       }}
       style={{ width: '100%', height: '100%' }}
     >
-      {searchResult.map((el, id) => (
+      {/* {searchResult.map((el, id) => (
         <div key={id}>
           <Marker
-            longitude={el.long}
-            latitude={el.lat}
+            longitude={center.longitude}
+            latitude={center.latitude}
             offsetLeft={-20}
             offsetTop={-10}
           >
-            {/* <p>!!!!!!!!!</p> */}
+            <p>🎈</p>
           </Marker>
         </div>
-      ))}
+      ))} */}
     </MapGL>
   )
 }
